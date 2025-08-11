@@ -2,104 +2,119 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Design System — Morning Muse Café
+   All colors are HSL tokens. Utilities and animations live here. */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core palette */
+    --background: 30 40% 97%; /* cream */
+    --foreground: 24 32% 18%; /* espresso text */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 30 40% 98%;
+    --card-foreground: 24 32% 18%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 30 40% 98%;
+    --popover-foreground: 24 32% 18%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 24 34% 32%; /* coffee brown */
+    --primary-foreground: 30 40% 98%; /* cream text */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 24 18% 90%; /* latte foam */
+    --secondary-foreground: 24 32% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 24 18% 88%;
+    --muted-foreground: 24 12% 42%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 16 70% 55%; /* warm peach glow */
+    --accent-foreground: 24 32% 18%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 30 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 24 20% 84%;
+    --input: 24 20% 84%;
+    --ring: 16 70% 55%;
 
-    --radius: 0.5rem;
+    --radius: 0.8rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Extended tokens */
+    --brand: var(--primary);
+    --brand-ink: var(--foreground);
+    --brand-cream: var(--background);
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --shadow-soft: 0 8px 24px hsl(var(--primary) / 0.12);
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--accent) / 0.25);
+    --shadow-glow: 0 0 28px hsl(var(--accent) / 0.28);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 24 14% 12%;
+    --foreground: 30 40% 96%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 24 14% 14%;
+    --card-foreground: 30 40% 96%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 24 14% 14%;
+    --popover-foreground: 30 40% 96%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 24 34% 70%;
+    --primary-foreground: 24 14% 12%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 24 12% 18%;
+    --secondary-foreground: 30 40% 96%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 24 12% 18%;
+    --muted-foreground: 30 15% 75%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 16 70% 60%;
+    --accent-foreground: 24 14% 12%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 60% 40%;
+    --destructive-foreground: 30 40% 96%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 24 12% 22%;
+    --input: 24 12% 22%;
+    --ring: 16 70% 60%;
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: "Nunito Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI,
+      Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   }
+  h1, h2, h3, .font-display {
+    font-family: "Playfair Display", ui-serif, Georgia, Cambria, Times, "Times New Roman", serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  /* Glass/Glow surfaces */
+  .glass { @apply bg-background/60 backdrop-blur-md border rounded-lg; box-shadow: var(--shadow-soft); }
+  .nav-glow { @apply bg-background/70 backdrop-blur-xl border-b; box-shadow: var(--shadow-elegant); }
+
+  /* Neon button and variants built on tokens */
+  .btn-neon {
+    @apply relative inline-flex items-center justify-center rounded-md px-6 py-3 font-medium text-primary-foreground bg-primary transition-all duration-200;
+    box-shadow: 0 0 0.6rem hsl(var(--accent) / 0.5), 0 0 1.2rem hsl(var(--accent) / 0.35);
+  }
+  .btn-neon:hover { box-shadow: 0 0 0.9rem hsl(var(--accent) / 0.7), 0 0 1.6rem hsl(var(--accent) / 0.45); transform: translateY(-1px); }
+  .btn-neon:active { transform: translateY(0); }
+  .btn-hero { @apply border border-white/10 bg-white/5 text-foreground hover:bg-white/10; }
+  .btn-soft { @apply bg-secondary text-secondary-foreground hover:bg-secondary/80; }
+
+  /* Interactive utilities */
+  .hover-scale { @apply transition-transform duration-200 hover:scale-[1.03]; }
+  .story-link { @apply relative inline-block; }
+  .story-link::after { content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 100%; background: hsl(var(--primary)); transform: scaleX(0); transform-origin: right; transition: transform .3s ease; }
+  .story-link:hover::after { transform: scaleX(1); transform-origin: left; }
+
+  /* Reveal helper for intersection observer */
+  .reveal { opacity: 0; transform: translateY(10px); }
+  .reveal.is-visible { opacity: 1; transform: none; }
 }
