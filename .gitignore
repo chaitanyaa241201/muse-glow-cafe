@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 cafe-terraform/.terraform/
 awscliv2.zip
+cafe-terraform/.terraform/
+awscliv2.zip
