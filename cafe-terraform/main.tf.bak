@@ -1,0 +1,32 @@
+provider "aws" {
+  region = "us-east-2"
+}
+
+resource "aws_s3_bucket" "cafe_site" {
+  bucket = "muse-glow-cafe-static-site-2025" 
+}
+
+resource "aws_s3_bucket_website_configuration" "cafe_site_website" {
+  bucket = aws_s3_bucket.cafe_site.bucket
+
+  index_document {
+    suffix = "index.html"
+  }
+}
+
+resource "aws_s3_bucket_policy" "allow_public_access" {
+  bucket = aws_s3_bucket.cafe_site.id
+  policy = jsonencode({
+    Version = "2012-10-17",
+    Statement = [
+      {
+        Sid       = "PublicReadGetObject",
+        Effect    = "Allow",
+        Principal = "*",
+        Action    = ["s3:GetObject"],
+        Resource  = ["${aws_s3_bucket.cafe_site.arn}/*"]
+      }
+    ]
+  })
+}
+
