@@ -1,73 +1,76 @@
-# Welcome to your Lovable project
+# Muse Glow Cafe ☕✨
 
-## Project info
+A modern, stylish cafe website designed to showcase **Muse Glow Cafe** – with a warm, inviting design and smooth user experience.  
+Built for static web hosting on **AWS S3** and version-controlled via GitHub.
 
-**URL**: https://lovable.dev/projects/3df5bedd-8a17-435a-bec5-6c6c6e72932a
+---
 
-## How can I edit this code?
+## 🚀 Project Overview
+The Muse Glow Cafe website highlights:
+- Elegant, responsive design for desktop and mobile
+- Attractive product/menu showcase
+- Smooth navigation with a modern UI feel
+- Optimized for performance on AWS S3 hosting
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 🛠️ Tech Stack
+- **HTML5** – Structure & content
+- **CSS3** – Styling & layout
+- **JavaScript (Vanilla)** – Interactivity
+- **AWS S3** – Static site hosting
+- **GitHub** – Version control
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3df5bedd-8a17-435a-bec5-6c6c6e72932a) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 📂 Project Structure
+muse-glow-cafe/
+├── index.html # Home page
+├── menu.html # Menu page
+├── about.html # About us page
+├── contact.html # Contact page
+├── assets/ # Images, icons, fonts
+├── css/ # Stylesheets
+└── js/ # JavaScript files
 
-**Use your preferred IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 📦 Deployment
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### AWS S3 + CloudFront Hosting
+This website is deployed using **Amazon S3** and distributed globally with **Amazon CloudFront**.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+**Deployment Steps:**
+1. Created an S3 bucket with static hosting enabled.
+2. Uploaded all website files to the S3 bucket.
+3. Configured public read access for static content.
+4. Set up **CloudFront** distribution pointing to the S3 bucket.
+5. Enabled caching and HTTPS via CloudFront.
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## 🔄 Development Workflow
+1. **Local Changes** → Make edits to HTML/CSS/JS files.
+2. **Git Commit & Push** → Version control using Git & GitHub.
+3. **Sync to S3** → Upload changes to AWS S3.
+4. **Invalidate CloudFront Cache** → Ensure latest version is served.
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📍 Live Demo
+🌐 **[Visit Muse Glow Cafe](https://d3kklix1hmuord.cloudfront.net)**
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 👤 Author
+**Chaitanya S Kulkarni**  
+🔗 [GitHub](https://github.com/chaitanyaa241201)  
+🔗 [LinkedIn](https://www.linkedin.com/in/chaitanya)  
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## 📜 License
+This project is open-source and available under the [MIT License](LICENSE).
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/3df5bedd-8a17-435a-bec5-6c6c6e72932a) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
